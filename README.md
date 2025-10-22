@@ -81,4 +81,5 @@ A *Flask-based web app* allows users to:
 - Incorporate *transfer learning and federated learning* for scalable cloud deployment  
 
 ---
-![Project Preview](./project_preview.png)
+![Project Preview]
+<img width="1914" height="932" alt="Screenshot 2025-04-25 123641" src="https://github.com/user-attachments/assets/014b7325-5b33-4d78-905d-d2b2a0824266" />
