@@ -3,10 +3,10 @@
 ---
 
 ### 📘 Overview
-An *AI-powered Deep Learning project* designed to classify *cardiovascular diseases (CVDs)* from *ECG (Electrocardiogram) images*.  
-The project compares the performance of *Convolutional Neural Networks (CNN)* and *Recurrent Neural Networks (RNN)* to determine which architecture provides superior accuracy and efficiency for ECG-based diagnosis.
-
-This system aims to support *early detection* and *automated screening* of heart abnormalities, reducing the dependency on manual ECG interpretation and minimizing human error.
+This project presents a comprehensive deep learning pipeline for the automated classification of cardiovascular diseases (CVDs) using ECG (Electrocardiogram) images. It benchmarks the performance of two prominent neural architectures:
+- Convolutional Neural Networks (CNN) — optimized for spatial feature extraction from medical images
+- Recurrent Neural Networks (RNN) — particularly LSTM-based models, designed for sequential data analysis
+The goal is to reduce reliance on manual ECG interpretation and enable scalable, AI-driven screening tools for early diagnosis of heart conditions such as arrhythmias, bradycardia, and tachycardia.
 
 ---
 
@@ -21,14 +21,34 @@ To provide *automated and data-driven diagnosis* of cardiovascular diseases thro
 ---
 
 ### 🧩 Methodology
-1. *Data Collection:* Publicly available ECG datasets (e.g., MIT-BIH Arrhythmia Database)  
-2. *Preprocessing:* Noise removal, grayscale conversion, normalization, and augmentation  
-3. *Feature Extraction:* Morphological and frequency-based ECG characteristics  
-4. *Model Development:*  
-   - *CNN (EfficientNetB0):* For spatial ECG feature extraction  
-   - *RNN (EfficientNet + LSTM):* For sequential pattern analysis  
-5. *Evaluation Metrics:* Accuracy, Precision, Recall, F1-Score, Confusion Matrix  
-6. *Deployment:* Flask web app for ECG image upload and disease prediction  
+1. 📥 Data Collection
+- Source: MIT-BIH Arrhythmia Database and other publicly available ECG datasets
+- Includes multiple arrhythmia types with expert-labeled annotations
+- Data anonymized and segmented into image slices for classification
+2. 🧼 Preprocessing
+- Band-pass filtering and wavelet transforms for noise removal
+- CLAHE (Contrast Limited Adaptive Histogram Equalization) for contrast enhancement
+- Edge detection, rotation, flipping, and normalization for robust training
+3. 🔍 Feature Extraction
+- Time-domain: RR intervals, QRS duration
+- Frequency-domain: FFT coefficients, spectral density
+- Morphological: waveform shape, amplitude, and subclass preservation
+4. 🧠 Model Development
+- CNN Model: EfficientNetB0 architecture trained on augmented ECG images
+- RNN Model: Hybrid EfficientNet + LSTM pipeline for sequential pattern learning
+- Training with Adam optimizer, categorical cross-entropy loss
+- Grad-CAM used for interpretability
+5. 📊 Evaluation Metrics
+- Accuracy, Precision, Recall, F1-Score
+- Confusion Matrix for class-wise performance
+- Training/validation loss and accuracy plots across epochs
+6. 🚀 Deployment
+- Flask API backend for model inference
+- HTML/CSS frontend for image upload and result display
+- Grad-CAM overlays rendered for interpretability
+- Routes:
+- / → Home
+- /disease-predict → Upload and prediction
 
 ---
 
